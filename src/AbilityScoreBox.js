@@ -8,6 +8,7 @@ class AbilityScoreBox extends React.Component {
         const element =
             <div className="smallgap">
                 <Card elevation={5}>
+                    <h1 align="center">Ability Scores</h1>
                     <AbilityScore ability="Strength" score={10}/>
                     <AbilityScore ability="Dexterity" score={10}/>
                     <AbilityScore ability="Constitution" score={10}/>
@@ -37,20 +38,19 @@ class AbilityScore extends React.Component {
 
     render() {
         let modifier = Math.floor((this.state.score - 10) / 2)
-        if (modifier > 0) {
-            modifier = '+' + modifier
-        }
+        if (modifier > 0) modifier = '+' + modifier
+
         const element =
             <div className="smallgap">
                 <Grid container spacing = {3}>
-                    <Grid item xs={2}>
-                        {modifier}
+                    <Grid item xs={1}>
+                        <div className="large-font">{modifier}</div>
                     </Grid>
-                    <Grid item xs={2}>
-                        {this.shortAtt}
+                    <Grid item xs={1}>
+                        <div className="large-font">{this.shortAtt}</div>
                     </Grid>
-                    <Grid item xs={6}>
-                        {this.ability}
+                    <Grid item xs={8}>
+                        <div className="centerHeader">{this.ability}</div>
                     </Grid>
                     <Grid item xs={2}>
                         <TextField type="number" onChange={this.onChange} value={this.state.score}/>
