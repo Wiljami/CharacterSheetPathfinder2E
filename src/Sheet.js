@@ -3,6 +3,7 @@ import AbilityScoreBox from "./AbilityScoreBox";
 import Grid from "@material-ui/core/Grid";
 import SavingThrowBox from "./SavingThrowBox";
 import SkillBox from "./SkillBox";
+import ArmorClassBox from "./ArmorClassBox";
 
 class Sheet extends React.Component {
   constructor(props) {
@@ -61,6 +62,11 @@ class Sheet extends React.Component {
         </Grid>
         <Grid item xs={6}>
           <SkillBox
+            abilityScoreModifiers={this.state.abilityScoreModifiers}
+          />
+        </Grid>
+        <Grid item xs={6}>
+          <ArmorClassBox
             abilityScoreModifiers={this.state.abilityScoreModifiers}
           />
         </Grid>
