@@ -1,5 +1,7 @@
 import React from "react";
 import AbilityScoreBox from "./AbilityScoreBox";
+import Grid from "@material-ui/core/Grid";
+import SavingThrowBox from "./SavingThrowBox";
 
 class Sheet extends React.Component {
   constructor(props) {
@@ -43,11 +45,20 @@ class Sheet extends React.Component {
 
   render() {
     return <>
-      <AbilityScoreBox
-        abilityScores={this.state.abilityScores}
-        abilityScoreModifiers={this.state.abilityScoreModifiers}
-        callback={this.characterChange}
-      />
+      <Grid container spacing={1}>
+        <Grid item xs={6}>
+          <AbilityScoreBox
+            abilityScores={this.state.abilityScores}
+            abilityScoreModifiers={this.state.abilityScoreModifiers}
+            callback={this.characterChange}
+          />
+        </Grid>
+        <Grid item xs={6}>
+          <SavingThrowBox
+            abilityScoreModifiers={this.state.abilityScoreModifiers}
+          />
+        </Grid>
+      </Grid>
     </>
   }
 }

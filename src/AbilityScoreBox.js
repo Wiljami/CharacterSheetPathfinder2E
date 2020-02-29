@@ -10,7 +10,7 @@ class AbilityScoreBox extends React.Component {
 
   render() {
     return (
-      <>
+      <div align="center">
         <h1>Ability Scores</h1>
         <AbilityScoreEntry
           callback = {this.callback}
@@ -48,7 +48,7 @@ class AbilityScoreBox extends React.Component {
           mod = {this.props.abilityScoreModifiers.Charisma}
           ability = 'Charisma'
         />
-      </>
+      </div>
     )
   }
 }
