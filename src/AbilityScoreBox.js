@@ -1,8 +1,9 @@
 import React from "react";
 import Input from "@material-ui/core/Input";
+import Grid from "@material-ui/core/Grid";
 
 class AbilityScoreBox extends React.Component {
-  onChange = (change) => {
+  callback = (change) => {
     Object.assign(this.props.abilityScores, change)
     this.props.callback(change)
   }
@@ -10,56 +11,72 @@ class AbilityScoreBox extends React.Component {
   render() {
     return (
       <>
-        <h1 align="center">Ability Scores</h1>
-        <AbilityScore
-          ability='Strength'
-          score={this.props.abilityScores.Strength}
-          callback={this.onChange}
+        <h1>Ability Scores</h1>
+        <AbilityScoreEntry
+          callback = {this.callback}
+          score = {this.props.abilityScores.Strength}
+          mod = {this.props.abilityScoreModifiers.Strength}
+          ability = 'Strength'
         />
-        <AbilityScoreMod
-          mod={this.props.abilityScoreModifiers.Strength}
+        <AbilityScoreEntry
+          callback = {this.callback}
+          score = {this.props.abilityScores.Dexterity}
+          mod = {this.props.abilityScoreModifiers.Dexterity}
+          ability = 'Dexterity'
         />
-        <AbilityScore
-          ability='Dexterity'
-          score={this.props.abilityScores.Dexterity}
-          callback={this.onChange}
+        <AbilityScoreEntry
+          callback = {this.callback}
+          score = {this.props.abilityScores.Constitution}
+          mod = {this.props.abilityScoreModifiers.Constitution}
+          ability = 'Constitution'
         />
-        <AbilityScoreMod
-          mod={this.props.abilityScoreModifiers.Dexterity}
+        <AbilityScoreEntry
+          callback = {this.callback}
+          score = {this.props.abilityScores.Intelligence}
+          mod = {this.props.abilityScoreModifiers.Intelligence}
+          ability = 'Intelligence'
         />
-        <AbilityScore
-          ability='Constitution'
-          score={this.props.abilityScores.Constitution}
-          callback={this.onChange}
+        <AbilityScoreEntry
+          callback = {this.callback}
+          score = {this.props.abilityScores.Wisdom}
+          mod = {this.props.abilityScoreModifiers.Wisdom}
+          ability = 'Wisdom'
         />
-        <AbilityScoreMod
-          mod={this.props.abilityScoreModifiers.Constitution}
-        />
-        <AbilityScore
-          ability='Intelligence'
-          score={this.props.abilityScores.Intelligence}
-          callback={this.onChange}
-        />
-        <AbilityScoreMod
-          mod={this.props.abilityScoreModifiers.Intelligence}
-        />
-        <AbilityScore
-          ability='Wisdom'
-          score={this.props.abilityScores.Wisdom}
-          callback={this.onChange}
-        />
-        <AbilityScoreMod
-          mod={this.props.abilityScoreModifiers.Wisdom}
-        />
-        <AbilityScore
-          ability='Charisma'
-          score={this.props.abilityScores.Charisma}
-          callback={this.onChange}
-        />
-        <AbilityScoreMod
-          mod={this.props.abilityScoreModifiers.Charisma}
+        <AbilityScoreEntry
+          callback = {this.callback}
+          score = {this.props.abilityScores.Charisma}
+          mod = {this.props.abilityScoreModifiers.Charisma}
+          ability = 'Charisma'
         />
       </>
+    )
+  }
+}
+
+class AbilityScoreEntry extends React.Component {
+  callback = (change) => {
+    this.props.callback(change)
+  }
+
+  render() {
+    return (
+    <Grid container spacing={2}>
+      <Grid item xs={8}>
+        <p>{this.props.ability}</p>
+      </Grid>
+      <Grid item xs={2}>
+        <AbilityScore
+          ability={this.props.ability}
+          score={this.props.score}
+          callback={this.callback}
+        />
+      </Grid>
+      <Grid item xs={2}>
+        <AbilityScoreMod
+          mod={this.props.mod}
+        />
+      </Grid>
+    </Grid>
     )
   }
 }
@@ -87,9 +104,6 @@ class AbilityScore extends React.Component {
 
   render() {
     return <>
-        <p>
-          {this.props.ability}
-        </p>
       <Input
         value = {this.props.score}
         onChange = {this.onChange}
