@@ -4,6 +4,7 @@ import Grid from "@material-ui/core/Grid";
 import SavingThrowBox from "./SavingThrowBox";
 import SkillBox from "./SkillBox";
 import ArmorClassBox from "./ArmorClassBox";
+import ImportCharacter from "./ImportCharacter"
 
 class Sheet extends React.Component {
   constructor(props) {
@@ -45,9 +46,22 @@ class Sheet extends React.Component {
     this.setState(change)
   }
 
+  importCharacter = (content) => {
+    console.log(content)
+  }
+
   render() {
     return <>
       <Grid container spacing={1}>
+        <Grid item xs={6}>
+          Import character:
+          <ImportCharacter
+            callback={this.importCharacter}
+          />
+        </Grid>
+        <Grid item xs={6}>
+          Export character:
+        </Grid>
         <Grid item xs={6}>
           <AbilityScoreBox
             abilityScores={this.state.abilityScores}
