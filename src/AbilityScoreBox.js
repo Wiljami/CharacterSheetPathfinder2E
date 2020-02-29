@@ -2,56 +2,54 @@ import React from "react";
 import Input from "@material-ui/core/Input";
 import Grid from "@material-ui/core/Grid";
 
-class AbilityScoreBox extends React.Component {
-  callback = (change) => {
-    Object.assign(this.props.abilityScores, change)
-    this.props.callback(change)
+export default function AbilityScoreBox(props) {
+  function callback(change) {
+    Object.assign(props.abilityScores, change)
+    props.callback(change)
   }
-
-  render() {
-    return (
-      <>
-        <h1>Ability Scores</h1>
-        <AbilityScoreEntry
-          callback = {this.callback}
-          score = {this.props.abilityScores.Strength}
-          mod = {this.props.abilityScoreModifiers.Strength}
-          ability = 'Strength'
-        />
-        <AbilityScoreEntry
-          callback = {this.callback}
-          score = {this.props.abilityScores.Dexterity}
-          mod = {this.props.abilityScoreModifiers.Dexterity}
-          ability = 'Dexterity'
-        />
-        <AbilityScoreEntry
-          callback = {this.callback}
-          score = {this.props.abilityScores.Constitution}
-          mod = {this.props.abilityScoreModifiers.Constitution}
-          ability = 'Constitution'
-        />
-        <AbilityScoreEntry
-          callback = {this.callback}
-          score = {this.props.abilityScores.Intelligence}
-          mod = {this.props.abilityScoreModifiers.Intelligence}
-          ability = 'Intelligence'
-        />
-        <AbilityScoreEntry
-          callback = {this.callback}
-          score = {this.props.abilityScores.Wisdom}
-          mod = {this.props.abilityScoreModifiers.Wisdom}
-          ability = 'Wisdom'
-        />
-        <AbilityScoreEntry
-          callback = {this.callback}
-          score = {this.props.abilityScores.Charisma}
-          mod = {this.props.abilityScoreModifiers.Charisma}
-          ability = 'Charisma'
-        />
-      </>
-    )
-  }
+  return (
+    <>
+      <h1>Ability Scores</h1>
+      <AbilityScoreEntry
+        callback = {callback}
+        score = {props.abilityScores.Strength}
+        mod = {props.abilityScoreModifiers.Strength}
+        ability = 'Strength'
+      />
+      <AbilityScoreEntry
+        callback = {callback}
+        score = {props.abilityScores.Dexterity}
+        mod = {props.abilityScoreModifiers.Dexterity}
+        ability = 'Dexterity'
+      />
+      <AbilityScoreEntry
+        callback = {callback}
+        score = {props.abilityScores.Constitution}
+        mod = {props.abilityScoreModifiers.Constitution}
+        ability = 'Constitution'
+      />
+      <AbilityScoreEntry
+        callback = {callback}
+        score = {props.abilityScores.Intelligence}
+        mod = {props.abilityScoreModifiers.Intelligence}
+        ability = 'Intelligence'
+      />
+      <AbilityScoreEntry
+        callback = {callback}
+        score = {props.abilityScores.Wisdom}
+        mod = {props.abilityScoreModifiers.Wisdom}
+        ability = 'Wisdom'
+      />
+      <AbilityScoreEntry
+        callback = {callback}
+        score = {props.abilityScores.Charisma}
+        mod = {props.abilityScoreModifiers.Charisma}
+        ability = 'Charisma'
+      />
+    </>
+  )
 }
+
 
 class AbilityScoreEntry extends React.Component {
   callback = (change) => {
@@ -116,5 +114,3 @@ class AbilityScore extends React.Component {
       </>
   }
 }
-
-export default AbilityScoreBox
