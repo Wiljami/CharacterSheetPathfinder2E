@@ -1,4 +1,6 @@
 import React from "react";
+import Button from "@material-ui/core/Button";
+
 export default function ImportCharacter(props) {
   let fileReader;
 
@@ -16,12 +18,16 @@ export default function ImportCharacter(props) {
 
   return (
     <>
-      <input type='file'
-             id='file'
-             className='input-file'
-             accept='.chr'
-             onChange={e => handleFileChosen(e.target.files[0])}
+      <input
+        accept='.chr'
+        id="contained-button-file"
+        type='file'
+        style={{display: 'none'}}
+        onChange={e => handleFileChosen(e.target.files[0])}
       />
+      <label htmlFor="contained-button-file">
+        <Button component='span'>Import Character</Button>
+      </label>
     </>
   )
 }
