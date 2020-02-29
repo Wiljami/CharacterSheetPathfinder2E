@@ -5,6 +5,7 @@ import SavingThrowBox from "./SavingThrowBox";
 import SkillBox from "./SkillBox";
 import ArmorClassBox from "./ArmorClassBox";
 import ImportCharacter from "./ImportCharacter"
+import ExportCharacter from "./ExportCharacter";
 
 class Sheet extends React.Component {
   constructor(props) {
@@ -47,7 +48,7 @@ class Sheet extends React.Component {
   }
 
   importCharacter = (content) => {
-    console.log(content)
+    this.setState(content)
   }
 
   render() {
@@ -60,7 +61,9 @@ class Sheet extends React.Component {
           />
         </Grid>
         <Grid item xs={6}>
-          Export character:
+          <ExportCharacter
+            character={this.state}
+          />
         </Grid>
         <Grid item xs={6}>
           <AbilityScoreBox
