@@ -31,7 +31,11 @@ class SavingThrowBox extends React.Component {
             />
           </Grid>
           <Grid item xs={12}>
-            <TextField label="Notes" fullWidth margin="normal"/>
+            <TextField
+              label="Notes"
+              fullWidth margin="normal"
+              multiline
+              rowsMax="4"/>
           </Grid>
         </Grid>
       </div>
