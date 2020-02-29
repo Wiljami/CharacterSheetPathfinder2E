@@ -4,7 +4,7 @@ import TextField from "@material-ui/core/TextField";
 class SavingThrowBox extends React.Component {
   render () {
     return (
-      <div align="center">
+      <>
         <Grid container spacing={1}>
           <Grid item xs={12}>
             <h1>Saving Throws</h1>
@@ -38,7 +38,7 @@ class SavingThrowBox extends React.Component {
               rowsMax="4"/>
           </Grid>
         </Grid>
-      </div>
+      </>
     )
   }
 }
