@@ -1,7 +1,7 @@
 import React from "react";
 import Grid from "@material-ui/core/Grid";
-import Input from "@material-ui/core/Input";
 import AbilityScoreMod from "./AbilityScoreMod";
+import AbilityScore from "./AbilityScore";
 
 export default function AbilityScoreEntry(props) {
   function callback(change) {
@@ -27,26 +27,4 @@ export default function AbilityScoreEntry(props) {
       </Grid>
     </Grid>
   )
-}
-
-class AbilityScore extends React.Component {
-  onChange = (event) => {
-    let number = Number(event.target.value)
-    let change = {[this.props.ability] : number}
-    this.props.callback(change)
-  }
-
-  render() {
-    return <>
-      <Input
-        value = {this.props.score}
-        onChange = {this.onChange}
-        inputProps={{
-          min: 0,
-          max: 100,
-          type: 'number'
-        }}
-      />
-    </>
-  }
 }
