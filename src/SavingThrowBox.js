@@ -2,8 +2,7 @@ import React from "react";
 import Grid from "@material-ui/core/Grid";
 import TextField from "@material-ui/core/TextField";
 import SavingThrow from "./SavingThrow";
-class SavingThrowBox extends React.Component {
-  render () {
+export default function SavingThrowBox (props) {
     return (
       <>
         <Grid container spacing={1}>
@@ -13,21 +12,21 @@ class SavingThrowBox extends React.Component {
           <Grid item xs={4}>
             <SavingThrow
               name = 'Fortitude'
-              mod = {this.props.abilityScoreModifiers.Constitution}
+              mod = {props.abilityScoreModifiers.Constitution}
               modName = 'CON'
             />
           </Grid>
           <Grid item xs={4}>
             <SavingThrow
               name = 'Reflex'
-              mod = {this.props.abilityScoreModifiers.Dexterity}
+              mod = {props.abilityScoreModifiers.Dexterity}
               modName = 'DEX'
             />
           </Grid>
           <Grid item xs={4}>
             <SavingThrow
               name = 'Will'
-              mod = {this.props.abilityScoreModifiers.Wisdom}
+              mod = {props.abilityScoreModifiers.Wisdom}
               modName = 'WIS'
             />
           </Grid>
@@ -42,6 +41,3 @@ class SavingThrowBox extends React.Component {
       </>
     )
   }
-}
-
-export default SavingThrowBox
