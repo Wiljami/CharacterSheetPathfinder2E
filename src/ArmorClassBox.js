@@ -1,5 +1,6 @@
 import React from "react";
 import Grid from "@material-ui/core/Grid";
+import Primary from "./Primary";
 
 export default function ArmorClassBox(props) {
   const ac = 10 + props.abilityScoreModifiers.Dexterity
@@ -17,7 +18,7 @@ export default function ArmorClassBox(props) {
             <Grid item xs={2}>
               <Grid container spacing={1}>
                 <Grid item xs={12}>
-                  DC Base
+                  <Primary>DC Base</Primary>
                 </Grid>
                 <Grid item xs={12}>
                   10
