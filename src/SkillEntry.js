@@ -1,5 +1,8 @@
 import React from "react";
 import Grid from "@material-ui/core/Grid";
+import MinorMod from "./MinorMod";
+import Major from "./Major";
+import Primary from "./Primary";
 
 export default function SkillEntry(props) {
   const total = props.abilityMod
@@ -8,14 +11,7 @@ export default function SkillEntry(props) {
 
   if (props.armorCheckPenalty) {
     armorCheckPenalty = (
-      <Grid container spacing={1}>
-        <Grid item xs={12}>
-          ARMOR
-        </Grid>
-        <Grid item xs={12}>
-          0
-        </Grid>
-      </Grid>
+      <MinorMod name='ARMOR' value='-2'/>
     )
   }
 
@@ -23,46 +19,25 @@ export default function SkillEntry(props) {
     <>
       <Grid container spacing={1}>
         <Grid item xs={4}>
-          {props.name}
+          <Major>{props.name}</Major>
         </Grid>
         <Grid item xs={2}>
-          {total}
+          <Major>{total}</Major>
         </Grid>
         <Grid item xs={1}>
-          =
+          <Major>=</Major>
         </Grid>
         <Grid item xs={1}>
-          <Grid container spacing={1}>
-            <Grid item xs={12}>
-              {props.abilityName}
-            </Grid>
-            <Grid item xs={12}>
-              {props.abilityMod}
-            </Grid>
-          </Grid>
+          <MinorMod name={props.abilityName} value={props.abilityMod}/>
         </Grid>
         <Grid item xs={1}>
-          <Grid container spacing={1}>
-            <Grid item xs={12}>
-              PROF
-            </Grid>
-            <Grid item xs={12}>
-              -2
-            </Grid>
-          </Grid>
+          <MinorMod name='PROF' value='2'/>
         </Grid>
         <Grid item xs={1}>
-          TEML
+          <Primary>TEML</Primary>
         </Grid>
         <Grid item xs={1}>
-          <Grid container spacing={1}>
-            <Grid item xs={12}>
-              ITEM
-            </Grid>
-            <Grid item xs={12}>
-              -1
-            </Grid>
-          </Grid>
+          <MinorMod name='ITEM' value='2'/>
         </Grid>
         <Grid item xs={1}>
           {armorCheckPenalty}
