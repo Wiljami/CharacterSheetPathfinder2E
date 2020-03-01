@@ -55,11 +55,14 @@ class Sheet extends React.Component {
     return <>
       <Grid container spacing={1}>
         <Grid item xs={6}>
+          <h1>Pathfinder 2E character sheet</h1>
+        </Grid>
+        <Grid item xs={3}>
           <ImportCharacter
             callback={this.importCharacter}
           />
         </Grid>
-        <Grid item xs={6}>
+        <Grid item xs={3}>
           <ExportCharacter
             character={this.state}
           />
