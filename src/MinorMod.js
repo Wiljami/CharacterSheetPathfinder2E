@@ -4,7 +4,7 @@ import Primary from "./Primary";
 
 export default function MinorMod(props) {
   return(
-    <>
+    <div align="center">
       <Grid container spacing={1}>
         <Grid item xs={12}>
           <Primary>{props.name}</Primary>
@@ -13,6 +13,6 @@ export default function MinorMod(props) {
           <Primary>{props.value}</Primary>
         </Grid>
       </Grid>
-    </>
+    </div>
   )
 }
