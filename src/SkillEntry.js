@@ -3,6 +3,7 @@ import Grid from "@material-ui/core/Grid";
 import MinorMod from "./MinorMod";
 import Major from "./Major";
 import Primary from "./Primary";
+import TEML from "./TEML";
 
 export default function SkillEntry(props) {
   const total = props.abilityMod
@@ -34,7 +35,7 @@ export default function SkillEntry(props) {
           <MinorMod name='PROF' value='2'/>
         </Grid>
         <Grid item xs={1}>
-          <Primary>TEML</Primary>
+          <TEML/>
         </Grid>
         <Grid item xs={1}>
           <MinorMod name='ITEM' value='2'/>

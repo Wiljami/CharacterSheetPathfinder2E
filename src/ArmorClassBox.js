@@ -3,6 +3,7 @@ import Grid from "@material-ui/core/Grid";
 import Primary from "./Primary";
 import Major from "./Major";
 import MinorMod from "./MinorMod";
+import TEML from "./TEML";
 
 export default function ArmorClassBox(props) {
   const ac = 10 + props.abilityScoreModifiers.Dexterity
@@ -30,7 +31,7 @@ export default function ArmorClassBox(props) {
               <MinorMod name='PROF' value='2'/>
             </Grid>
             <Grid item xs={2}>
-              <Primary>TEML</Primary>
+              <TEML/>
             </Grid>
             <Grid item xs={2}>
               <MinorMod name='ITEM' value='-1'/>

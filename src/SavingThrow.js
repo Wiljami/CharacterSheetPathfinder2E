@@ -1,8 +1,8 @@
 import React from "react";
 import Grid from "@material-ui/core/Grid";
 import MinorMod from "./MinorMod";
-import Primary from "./Primary";
 import Major from "./Major";
+import TEML from "./TEML";
 
 export default function SavingThrow(props) {
   let savingThrow = props.mod
@@ -25,7 +25,7 @@ export default function SavingThrow(props) {
           <MinorMod name='ITEM' value='???'/>
         </Grid>
         <Grid item xs={6}>
-          <Primary>TEML</Primary>
+          <TEML/>
         </Grid>
       </Grid>
     </div>
