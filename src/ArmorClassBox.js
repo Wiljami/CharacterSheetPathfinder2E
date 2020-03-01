@@ -1,6 +1,8 @@
 import React from "react";
 import Grid from "@material-ui/core/Grid";
 import Primary from "./Primary";
+import Major from "./Major";
+import MinorMod from "./MinorMod";
 
 export default function ArmorClassBox(props) {
   const ac = 10 + props.abilityScoreModifiers.Dexterity
@@ -11,61 +13,47 @@ export default function ArmorClassBox(props) {
           <h1>Armor Class</h1>
         </Grid>
         <Grid item xs={4}>
-          {ac}
+          <Major>{ac}</Major>
         </Grid>
         <Grid item xs={8}>
           <Grid container spacing={1}>
             <Grid item xs={2}>
-              <Grid container spacing={1}>
-                <Grid item xs={12}>
-                  <Primary>DC Base</Primary>
-                </Grid>
-                <Grid item xs={12}>
-                  10
-                </Grid>
-              </Grid>
+              <MinorMod name='DC Base' value='10'/>
             </Grid>
             <Grid item xs={2}>
-              <Grid container spacing={1}>
-                <Grid item xs={12}>
-                  DEX
-                </Grid>
-                <Grid item xs={12}>
-                  {props.abilityScoreModifiers.Dexterity}
-                </Grid>
-              </Grid>
+              <MinorMod name='DEX' value={props.abilityScoreModifiers.Dexterity}/>
             </Grid>
             <Grid item xs={2}>
-              CAP
+              <MinorMod name='CAP' value='2'/>
             </Grid>
             <Grid item xs={2}>
-              PROF
+              <MinorMod name='PROF' value='2'/>
             </Grid>
             <Grid item xs={2}>
-              TEML
+              <Primary>TEML</Primary>
             </Grid>
             <Grid item xs={2}>
-              ITEM
+              <MinorMod name='ITEM' value='-1'/>
             </Grid>
           </Grid>
           <Grid container spacing={1}>
             <Grid item xs={2}>
-              Shield
+              <Major>Shield</Major>
             </Grid>
             <Grid item xs={2}>
-              ++
+              <Primary>++</Primary>
             </Grid>
             <Grid item xs={2}>
-              Hardness
+              <MinorMod name='Hardness' value='0'/>
             </Grid>
             <Grid item xs={2}>
-              MAX HP
+              <MinorMod name='MAX HP' value='0'/>
             </Grid>
             <Grid item xs={2}>
-              BT
+              <MinorMod name='BT' value='0'/>
             </Grid>
             <Grid item xs={2}>
-              CURRENT HP
+              <MinorMod name='Current HP' value='0'/>
             </Grid>
           </Grid>
         </Grid>
