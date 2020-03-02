@@ -9,7 +9,13 @@ export default function SavingThrow(props) {
     props.callback({[props.name] : value})
   }
 
-  let savingThrow = props.mod + props.teml
+  let proficiency = -2
+
+  if (props.teml >= 0) {
+    proficiency = props.teml + props.level
+  }
+
+  let savingThrow = props.mod + proficiency
   return (
     <div align="center">
       <Grid container spacing={1}>
@@ -23,7 +29,7 @@ export default function SavingThrow(props) {
           <MinorMod name={props.modName} value={props.mod}/>
         </Grid>
         <Grid item xs={6}>
-          <MinorMod name='PROF' value='???'/>
+          <MinorMod name='PROF' value={proficiency}/>
         </Grid>
         <Grid item xs={6}>
           <MinorMod name='ITEM' value='???'/>

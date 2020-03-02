@@ -16,27 +16,30 @@ export default function SavingThrowBox (props) {
         <Grid item xs={4}>
           <SavingThrow
             name = 'Fortitude'
-            mod = {props.abilityScoreModifiers.Constitution}
             modName = 'CON'
             teml = {props.savingThrows.Fortitude}
+            mod = {props.abilityScoreModifiers.Constitution}
+            level = {props.level}
             callback = {callback}
           />
         </Grid>
         <Grid item xs={4}>
           <SavingThrow
             name = 'Reflex'
-            mod = {props.abilityScoreModifiers.Dexterity}
             modName = 'DEX'
             teml = {props.savingThrows.Reflex}
+            mod = {props.abilityScoreModifiers.Dexterity}
+            level = {props.level}
             callback = {callback}
           />
         </Grid>
         <Grid item xs={4}>
           <SavingThrow
             name = 'Will'
-            mod = {props.abilityScoreModifiers.Wisdom}
             modName = 'WIS'
             teml = {props.savingThrows.Will}
+            mod = {props.abilityScoreModifiers.Wisdom}
+            level = {props.level}
             callback = {callback}
           />
         </Grid>
