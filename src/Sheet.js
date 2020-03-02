@@ -14,7 +14,16 @@ class Sheet extends React.Component {
     this.state = {
       level : 1,
       details : {
-        Name: ''
+        name: '',
+        playerName: '',
+        experience: '',
+        ancestry: '',
+        background: '',
+        class: '',
+        size: '',
+        alignment: '',
+        traits: '',
+        deity: ''
       },
       abilityScores : {
         Strength: 6,
