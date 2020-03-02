@@ -7,10 +7,16 @@ import TEML from "./TEML";
 
 export default function ArmorClassBox(props) {
   function callback(change) {
-    props.callback({armorClass : {proficiency : change}})
+    props.callback({armorClass : {teml : change}})
   }
 
-  const ac = 10 + props.abilityScoreModifiers.Dexterity + props.armorClass.proficiency
+  let proficiency = -2
+
+  if (props.armorClass.teml >= 0) {
+    proficiency = props.armorClass.teml + props.level
+  }
+
+  let ac = 10 + props.abilityScoreModifiers.Dexterity + proficiency
   return (
     <>
       <Grid container spacing={1}>
@@ -32,12 +38,12 @@ export default function ArmorClassBox(props) {
               <MinorMod name='CAP' value='2'/>
             </Grid>
             <Grid item xs={2}>
-              <MinorMod name='PROF' value='2'/>
+              <MinorMod name='PROF' value={proficiency}/>
             </Grid>
             <Grid item xs={2}>
               <TEML
                 callback={callback}
-                value={props.armorClass.proficiency}
+                value={props.armorClass.teml}
               />
             </Grid>
             <Grid item xs={2}>
