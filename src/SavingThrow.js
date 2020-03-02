@@ -10,7 +10,7 @@ export default function SavingThrow(props) {
     props.callback(change)
   }
 
-  let savingThrow = props.mod
+  let savingThrow = props.mod + props.teml
   return (
     <div align="center">
       <Grid container spacing={1}>
