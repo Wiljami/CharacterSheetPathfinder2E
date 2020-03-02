@@ -10,7 +10,7 @@ export default function ArmorClassBox(props) {
     props.callback({armorClass : {proficiency : change}})
   }
 
-  const ac = 10 + props.abilityScoreModifiers.Dexterity
+  const ac = 10 + props.abilityScoreModifiers.Dexterity + props.armorClass.proficiency
   return (
     <>
       <Grid container spacing={1}>
