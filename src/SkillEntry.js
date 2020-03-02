@@ -37,7 +37,7 @@ export default function SkillEntry(props) {
         <Grid item xs={1}>
           <MinorMod name='PROF' value='2'/>
         </Grid>
-        <Grid item xs={}>
+        <Grid item xs={2}>
           <TEML
             callback={callback}
             value={props.teml}
