@@ -2,7 +2,6 @@ import React from "react";
 import Grid from "@material-ui/core/Grid";
 import MinorMod from "./MinorMod";
 import Major from "./Major";
-import Primary from "./Primary";
 import TEML from "./TEML";
 
 export default function SkillEntry(props) {
