@@ -5,6 +5,11 @@ import Major from "./Major";
 import TEML from "./TEML";
 
 export default function SavingThrow(props) {
+  function callback(value) {
+    let change = {[props.name] : value}
+    props.callback(change)
+  }
+
   let savingThrow = props.mod
   return (
     <div align="center">
@@ -25,7 +30,10 @@ export default function SavingThrow(props) {
           <MinorMod name='ITEM' value='???'/>
         </Grid>
         <Grid item xs={6}>
-          <TEML/>
+          <TEML
+            callback = {callback}
+            value = {props.teml}
+          />
         </Grid>
       </Grid>
     </div>

@@ -26,6 +26,11 @@ class Sheet extends React.Component {
         Intelligence: 1,
         Wisdom: 2,
         Charisma: 3
+      },
+      savingThrows : {
+        Fortitude : -2,
+        Reflex : 0,
+        Will : 2
       }
     }
   }
@@ -77,6 +82,8 @@ class Sheet extends React.Component {
         <Grid item xs={6}>
           <SavingThrowBox
             abilityScoreModifiers={this.state.abilityScoreModifiers}
+            savingThrows={this.state.savingThrows}
+            callback={this.characterChange}
           />
         </Grid>
         <Grid item xs={6}>
