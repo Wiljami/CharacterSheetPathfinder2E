@@ -4,9 +4,7 @@ import TextField from "@material-ui/core/TextField";
 import SavingThrow from "./SavingThrow";
 export default function SavingThrowBox (props) {
   function callback(change) {
-    Object.assign(props.savingThrows, change)
-    let result = {savingThrows : Object.assign(props.savingThrows, change)}
-    props.callback(result)
+    props.callback({savingThrows : Object.assign(props.savingThrows, change)})
   }
 
   return (
