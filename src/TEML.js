@@ -4,6 +4,9 @@ import FormGroup from '@material-ui/core/FormGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 import Grid from "@material-ui/core/Grid";
+import Paper from "@material-ui/core/Paper";
+import Box from "@material-ui/core/Box";
+import Primary from "./Primary";
 
 export default function TEML(props) {
   const handleChange = value => event => {
@@ -30,13 +33,31 @@ export default function TEML(props) {
 
   return (
     <>
-      <Grid container spacing={2}>
-        <Grid container spacing={0} justify="center">
-          T<Checkbox checked={t} onChange={handleChange(0)} style={checkboxStyle} value="Trained" />
-          <Checkbox checked={e} onChange={handleChange(2)} style={checkboxStyle} value="Expert" />
-          <Checkbox checked={m} onChange={handleChange(4)} style={checkboxStyle} value="Master" />
-          <Checkbox checked={l} onChange={handleChange(6)} style={checkboxStyle} value="Legendary" />
-        </Grid>
+      <Grid container spacing={0} justify="center">
+        <Box>
+          <div align="center">
+            <Primary>T</Primary>
+            <Checkbox checked={t} onChange={handleChange(0)} style={checkboxStyle} value="Trained" />
+          </div>
+        </Box>
+        <Box>
+          <div align="center">
+            <Primary>E</Primary>
+            <Checkbox checked={e} onChange={handleChange(2)} style={checkboxStyle} value="Expert" />
+          </div>
+        </Box>
+        <Box>
+          <div align="center">
+            <Primary>M</Primary>
+            <Checkbox checked={m} onChange={handleChange(4)} style={checkboxStyle} value="Master" />
+          </div>
+        </Box>
+        <Box>
+          <div align="center">
+            <Primary>L</Primary>
+            <Checkbox checked={l} onChange={handleChange(6)} style={checkboxStyle} value="Legendary" />
+          </div>
+        </Box>
       </Grid>
     </>
   )
