@@ -6,8 +6,7 @@ import TEML from "./TEML";
 
 export default function SavingThrow(props) {
   function callback(value) {
-    let change = {[props.name] : value}
-    props.callback(change)
+    props.callback({[props.name] : value})
   }
 
   let savingThrow = props.mod + props.teml
