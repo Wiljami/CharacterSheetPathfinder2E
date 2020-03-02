@@ -66,6 +66,7 @@ class Sheet extends React.Component {
         Religion : -2,
         Society : -2,
         Stealth : -2,
+        Survival : -2,
         Thievery : -2
       }
     }
