@@ -18,12 +18,11 @@ export default function LevelBox(props) {
           inputProps={{
             min: 1,
             max: 20,
-            type: 'number'
-          }}
-          style={{
+            type: 'number',
+            style: {
             fontSize: '32px',
             textAlign: 'center'
-          }}
+          }}}
         />
       </Box>
     </div>
