@@ -5,7 +5,11 @@ import Major from "./Major";
 import TEML from "./TEML";
 
 export default function SkillEntry(props) {
-  const total = props.abilityMod
+  function callback(value) {
+    props.callback({[props.name] : value})
+  }
+
+  const total = props.abilityMod + props.teml
 
   let armorCheckPenalty = ''
 
@@ -34,7 +38,10 @@ export default function SkillEntry(props) {
           <MinorMod name='PROF' value='2'/>
         </Grid>
         <Grid item xs={1}>
-          <TEML/>
+          <TEML
+            callback={callback}
+            value={props.teml}
+          />
         </Grid>
         <Grid item xs={1}>
           <MinorMod name='ITEM' value='2'/>
