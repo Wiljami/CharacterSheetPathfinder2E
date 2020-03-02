@@ -24,7 +24,9 @@ export default function ArmorClassBox(props) {
           <h1>Armor Class</h1>
         </Grid>
         <Grid item xs={4}>
-          <Major>{ac}</Major>
+          <div align='center'>
+            <Major>{ac}</Major>
+          </div>
         </Grid>
         <Grid item xs={8}>
           <Grid container spacing={1}>
