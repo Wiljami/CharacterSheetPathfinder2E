@@ -7,6 +7,7 @@ import ArmorClassBox from "./ArmorClassBox";
 import ImportCharacter from "./ImportCharacter"
 import ExportCharacter from "./ExportCharacter";
 import {CharacterDetailBox} from './CharacterDetailBox'
+import LevelBox from './LevelBox'
 
 class Sheet extends React.Component {
   constructor(props) {
@@ -73,7 +74,6 @@ class Sheet extends React.Component {
   characterChange = (change) => {
     this.calculateAbilityModifiers()
     this.setState(change)
-    console.log(this.state)
   }
 
   importCharacter = (content) => {
@@ -96,9 +96,15 @@ class Sheet extends React.Component {
             character={this.state}
           />
         </Grid>
-        <Grid item xs={12}>
+        <Grid item xs={11}>
           <CharacterDetailBox
             details={this.state.details}
+            callback={this.characterChange}
+          />
+        </Grid>
+        <Grid item xs={1}>
+          <LevelBox
+            level={this.state.level}
             callback={this.characterChange}
           />
         </Grid>
