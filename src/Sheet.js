@@ -6,12 +6,16 @@ import SkillBox from "./SkillBox";
 import ArmorClassBox from "./ArmorClassBox";
 import ImportCharacter from "./ImportCharacter"
 import ExportCharacter from "./ExportCharacter";
+import {CharacterDetailBox} from './CharacterDetailBox'
 
 class Sheet extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       level : 1,
+      details : {
+        Name: ''
+      },
       abilityScores : {
         Strength: 6,
         Dexterity: 8,
@@ -60,6 +64,7 @@ class Sheet extends React.Component {
   characterChange = (change) => {
     this.calculateAbilityModifiers()
     this.setState(change)
+    console.log(this.state)
   }
 
   importCharacter = (content) => {
@@ -80,6 +85,12 @@ class Sheet extends React.Component {
         <Grid item xs={3}>
           <ExportCharacter
             character={this.state}
+          />
+        </Grid>
+        <Grid item xs={12}>
+          <CharacterDetailBox
+            details={this.state.details}
+            callback={this.characterChange}
           />
         </Grid>
         <Grid item xs={6}>
