@@ -4,7 +4,8 @@ import AbilityScoreEntry from "./AbilityScoreEntry";
 export default function AbilityScoreBox(props) {
   function callback(change) {
     Object.assign(props.abilityScores, change)
-    props.callback(change)
+    let result = {abilityScores : props.abilityScores}
+    props.callback(result)
   }
   return (
     <>
