@@ -60,7 +60,6 @@ class Sheet extends React.Component {
   characterChange = (change) => {
     this.calculateAbilityModifiers()
     this.setState(change)
-    console.log(this.state)
   }
 
   importCharacter = (content) => {
