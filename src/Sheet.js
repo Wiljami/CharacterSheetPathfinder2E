@@ -11,6 +11,7 @@ class Sheet extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      level : 1,
       abilityScores : {
         Strength: 6,
         Dexterity: 8,
@@ -33,7 +34,7 @@ class Sheet extends React.Component {
         Will : 2
       },
       armorClass : {
-        proficiency: 6
+        teml: 6
       },
       skills : {
         Acrobatics : -2,
@@ -91,6 +92,7 @@ class Sheet extends React.Component {
           <SavingThrowBox
             abilityScoreModifiers={this.state.abilityScoreModifiers}
             savingThrows={this.state.savingThrows}
+            level={this.state.level}
             callback={this.characterChange}
           />
         </Grid>
@@ -98,6 +100,7 @@ class Sheet extends React.Component {
           <SkillBox
             abilityScoreModifiers={this.state.abilityScoreModifiers}
             skills={this.state.skills}
+            level={this.state.level}
             callback={this.characterChange}
           />
         </Grid>
@@ -105,6 +108,7 @@ class Sheet extends React.Component {
           <ArmorClassBox
             abilityScoreModifiers={this.state.abilityScoreModifiers}
             armorClass={this.state.armorClass}
+            level={this.state.level}
             callback={this.characterChange}
           />
         </Grid>
