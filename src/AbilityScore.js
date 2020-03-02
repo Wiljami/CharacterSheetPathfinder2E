@@ -15,8 +15,10 @@ export default function AbilityScore(props) {
       inputProps={{
         min: 0,
         max: 100,
-        type: 'number'
-      }}
+        type: 'number',
+        style: {
+          textAlign: 'center'
+        }}}
     />
   </>
 }
