@@ -15,14 +15,6 @@ export default function SkillEntry(props) {
     proficiency = props.teml + props.level
   }
 
-  let armorCheckPenalty = ''
-
-  if (props.armorCheckPenalty) {
-    armorCheckPenalty = (
-      <MinorMod name='ARMOR' value='-2'/>
-    )
-  }
-
   const total = props.abilityMod + proficiency
 
   return (
@@ -53,7 +45,7 @@ export default function SkillEntry(props) {
           <MinorMod name='ITEM' value='2'/>
         </Grid>
         <Grid item xs={1}>
-          {armorCheckPenalty}
+          {props.armorCheckPenalty ? <MinorMod name='ARMOR' value='-2'/> : null}
         </Grid>
       </Grid>
     </>
