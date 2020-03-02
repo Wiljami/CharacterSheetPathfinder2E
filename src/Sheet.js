@@ -27,34 +27,46 @@ class Sheet extends React.Component {
         deity: ''
       },
       abilityScores : {
-        Strength: 6,
-        Dexterity: 8,
+        Strength: 10,
+        Dexterity: 10,
         Constitution: 10,
-        Intelligence: 12,
-        Wisdom: 14,
-        Charisma: 16
+        Intelligence: 10,
+        Wisdom: 10,
+        Charisma: 10
       },
       abilityScoreModifiers : {
-        Strength: -2,
-        Dexterity: -1,
+        Strength: -0,
+        Dexterity: -0,
         Constitution: 0,
-        Intelligence: 1,
-        Wisdom: 2,
-        Charisma: 3
+        Intelligence: 0,
+        Wisdom: 0,
+        Charisma: 0
       },
       savingThrows : {
         Fortitude : -2,
-        Reflex : 0,
-        Will : 2,
+        Reflex : -2,
+        Will : -2,
         Notes : ''
       },
       armorClass : {
-        teml: 6
+        teml: -2
       },
       skills : {
         Acrobatics : -2,
-        Arcana : 6,
-        Athletics : 4
+        Arcana : -2,
+        Athletics : -2,
+        Crafting : -2,
+        Deception : -2,
+        Diplomacy : -2,
+        Intimidation : -2,
+        Medicine : -2,
+        Nature : -2,
+        Occultism : -2,
+        Performance : -2,
+        Religion : -2,
+        Society : -2,
+        Stealth : -2,
+        Thievery : -2
       }
     }
   }
