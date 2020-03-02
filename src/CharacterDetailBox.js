@@ -7,6 +7,11 @@ export function CharacterDetailBox(props) {
     props.callback({details : Object.assign(props.details, {[event.target.id] : event.target.value})})
   }
 
+  const style = {
+    margin: 0,
+    padding: 0
+  }
+
   return (
     <>
       <Grid container spacing={1}>
@@ -18,6 +23,7 @@ export function CharacterDetailBox(props) {
             defaultValue={props.details.name}
             multiline
             id='name'
+            style={style}
           />
           <TextField
             label='Player name'
@@ -26,6 +32,7 @@ export function CharacterDetailBox(props) {
             defaultValue={props.details.playerName}
             multiline
             id='playerName'
+            style={style}
           />
           <TextField
             label='Class'
@@ -34,6 +41,7 @@ export function CharacterDetailBox(props) {
             defaultValue={props.details.class}
             multiline
             id='class'
+            style={style}
           />
           <TextField
             label='Experience points'
@@ -42,6 +50,7 @@ export function CharacterDetailBox(props) {
             defaultValue={props.details.experience}
             multiline
             id='experience'
+            style={style}
           />
         </Grid>
         <Grid item xs={6}>
@@ -52,6 +61,7 @@ export function CharacterDetailBox(props) {
             defaultValue={props.details.ancestry}
             multiline
             id='ancestry'
+            style={style}
           />
           <TextField
             label='Background'
@@ -60,6 +70,7 @@ export function CharacterDetailBox(props) {
             defaultValue={props.details.background}
             multiline
             id='background'
+            style={style}
           />
           <Grid container spacing={1}>
             <Grid item xs={2}>
@@ -70,6 +81,7 @@ export function CharacterDetailBox(props) {
                 defaultValue={props.details.size}
                 multiline
                 id='size'
+                style={style}
               />
             </Grid>
             <Grid item xs={3}>
@@ -80,6 +92,7 @@ export function CharacterDetailBox(props) {
                 defaultValue={props.details.alignment}
                 multiline
                 id='alignment'
+                style={style}
               />
             </Grid>
             <Grid item xs={7}>
@@ -90,6 +103,7 @@ export function CharacterDetailBox(props) {
                 defaultValue={props.details.traits}
                 multiline
                 id='traits'
+                style={style}
               />
             </Grid>
           </Grid>
@@ -100,6 +114,7 @@ export function CharacterDetailBox(props) {
             defaultValue={props.details.deity}
             multiline
             id='deity'
+            style={style}
           />
         </Grid>
       </Grid>
