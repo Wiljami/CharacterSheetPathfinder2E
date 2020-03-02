@@ -6,6 +6,10 @@ import MinorMod from "./MinorMod";
 import TEML from "./TEML";
 
 export default function ArmorClassBox(props) {
+  function callback(change) {
+    props.callback({armorClass : {proficiency : change}})
+  }
+
   const ac = 10 + props.abilityScoreModifiers.Dexterity
   return (
     <>
@@ -31,7 +35,10 @@ export default function ArmorClassBox(props) {
               <MinorMod name='PROF' value='2'/>
             </Grid>
             <Grid item xs={2}>
-              <TEML/>
+              <TEML
+                callback={callback}
+                value={props.armorClass.proficiency}
+              />
             </Grid>
             <Grid item xs={2}>
               <MinorMod name='ITEM' value='-1'/>

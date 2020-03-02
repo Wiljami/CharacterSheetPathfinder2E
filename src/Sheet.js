@@ -31,6 +31,9 @@ class Sheet extends React.Component {
         Fortitude : -2,
         Reflex : 0,
         Will : 2
+      },
+      armorClass : {
+        proficiency: 6
       }
     }
   }
@@ -94,6 +97,8 @@ class Sheet extends React.Component {
         <Grid item xs={6}>
           <ArmorClassBox
             abilityScoreModifiers={this.state.abilityScoreModifiers}
+            armorClass={this.state.armorClass}
+            callback={this.characterChange}
           />
         </Grid>
       </Grid>
