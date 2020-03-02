@@ -14,31 +14,34 @@ export default function SkillBox(props)  {
         <Grid item xs={12}>
           <SkillEntry
             name = 'Acrobatics'
-            abilityMod = {props.abilityScoreModifiers.Dexterity}
             abilityName = 'DEX'
             armorCheckPenalty = {true}
-            callback = {callback}
+            abilityMod = {props.abilityScoreModifiers.Dexterity}
             teml = {props.skills.Acrobatics}
+            level = {props.level}
+            callback = {callback}
           />
         </Grid>
         <Grid item xs={12}>
           <SkillEntry
             name = 'Arcana'
-            abilityMod = {props.abilityScoreModifiers.Intelligence}
             abilityName = 'INT'
             armorCheckPenalty = {false}
-            callback = {callback}
+            abilityMod = {props.abilityScoreModifiers.Intelligence}
             teml = {props.skills.Arcana}
+            level = {props.level}
+            callback = {callback}
           />
         </Grid>
         <Grid item xs={12}>
           <SkillEntry
             name = 'Athletics'
-            abilityMod = {props.abilityScoreModifiers.Strength}
             abilityName = 'STR'
             armorCheckPenalty = {true}
-            callback = {callback}
+            abilityMod = {props.abilityScoreModifiers.Strength}
             teml = {props.skills.Athletics}
+            level = {props.level}
+            callback = {callback}
           />
         </Grid>
       </Grid>

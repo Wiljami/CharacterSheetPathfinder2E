@@ -9,7 +9,11 @@ export default function SkillEntry(props) {
     props.callback({[props.name] : value})
   }
 
-  const total = props.abilityMod + props.teml
+  let proficiency = -2
+
+  if (props.teml >= 0) {
+    proficiency = props.teml + props.level
+  }
 
   let armorCheckPenalty = ''
 
@@ -18,6 +22,8 @@ export default function SkillEntry(props) {
       <MinorMod name='ARMOR' value='-2'/>
     )
   }
+
+  const total = props.abilityMod + proficiency
 
   return (
     <>
@@ -35,7 +41,7 @@ export default function SkillEntry(props) {
           <MinorMod name={props.abilityName} value={props.abilityMod}/>
         </Grid>
         <Grid item xs={1}>
-          <MinorMod name='PROF' value='2'/>
+          <MinorMod name='PROF' value={proficiency}/>
         </Grid>
         <Grid item xs={2}>
           <TEML
