@@ -11,6 +11,11 @@ export default function SavingThrowBox (props) {
     props.callback({savingThrows : {Notes : event.target.value}})
   }
 
+  const style = {
+    margin: 0,
+    padding: 0
+  }
+
   return (
     <>
       <Grid container spacing={1}>
@@ -55,6 +60,7 @@ export default function SavingThrowBox (props) {
             rowsMax="4"
             onBlur={onNotesChange}
             defaultValue={props.savingThrows.Notes}
+            style={style}
           />
         </Grid>
       </Grid>
