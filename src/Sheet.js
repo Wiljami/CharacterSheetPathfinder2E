@@ -31,7 +31,8 @@ class Sheet extends React.Component {
       savingThrows : {
         Fortitude : -2,
         Reflex : 0,
-        Will : 2
+        Will : 2,
+        Notes : ''
       },
       armorClass : {
         teml: 6
@@ -59,6 +60,7 @@ class Sheet extends React.Component {
   characterChange = (change) => {
     this.calculateAbilityModifiers()
     this.setState(change)
+    console.log(this.state)
   }
 
   importCharacter = (content) => {
