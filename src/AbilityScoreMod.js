@@ -1,4 +1,5 @@
 import React from "react";
+import Major from './Major'
 
 export default function AbilityScoreMod(props) {
   let mod = props.mod
@@ -7,7 +8,7 @@ export default function AbilityScoreMod(props) {
   }
   return (
     <>
-      <p>{mod}</p>
+      <Major>{mod}</Major>
     </>
   )
 }
