@@ -8,12 +8,15 @@ import ImportCharacter from "./ImportCharacter"
 import ExportCharacter from "./ExportCharacter";
 import {CharacterDetailBox} from './CharacterDetailBox'
 import LevelBox from './LevelBox'
+import ClassDCBox from './ClassDCBox'
 
 class Sheet extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       level : 1,
+      classDC: 'Strength',
+      DCProf: -2,
       details : {
         name: '',
         playerName: '',
@@ -119,6 +122,15 @@ class Sheet extends React.Component {
           <LevelBox
             level={this.state.level}
             callback={this.characterChange}
+          />
+        </Grid>
+        <Grid item xs={6}>
+          <ClassDCBox
+            abilityScoreModifiers={this.state.abilityScoreModifiers}
+            level={this.state.level}
+            classDC={this.state.classDC}
+            callback={this.characterChange}
+            dcProf={this.state.DCProf}
           />
         </Grid>
         <Grid item xs={6}>
