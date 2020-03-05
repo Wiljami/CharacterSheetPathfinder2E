@@ -49,7 +49,7 @@ class Sheet extends React.Component {
         Fortitude : -2,
         Reflex : -2,
         Will : -2,
-        Notes : ''
+        Notes : 'Saving Throws'
       },
       armorClass : {
         teml: -2
